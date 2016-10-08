@@ -7,8 +7,13 @@ Send Processing Screen image to Unity using UDP connection.
 ## Get Started
 Download the files from the github repository:
 ### Unity
-  Add the file *ProcessingToTexture.cs* to your
-
+  - Add the file **ProcessingToTexture.cs** to your *Assets* folder. 
+  - Create (or import) any  3D object, for example, a quad (GameObject > 3D Object > Quad)
+  - Drag and drop the **ProcessingToTexture.cs** to the gameObject
+  - Set the **width** and **height** based on the width and height from processing skecth
+  - If you want run interactions on the processing sketchs, enable Unity to run on background (File > Build Settings > Player Settings... > *check* Run On Bakground)
+  
+### Processing
 ## Data Transference
 This simple system sends multiple chunks of byte arrays from processing to Unity, using by default the localhost ip "127.0.0.1" at port "8051".
 
