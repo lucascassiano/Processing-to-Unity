@@ -1,11 +1,7 @@
 # Processing to Unity
-Send Processing Screen image to Unity using UDP connection.
+Render Processing Sketches Screens as an Unity Texture2D (compatible with Windows, OSX and Linux)
 
 ## Example
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WHieBDCzoCw" frameborder="0" allowfullscreen></iframe>
-![example](http://web.media.mit.edu/~cassiano/img/large/processing_to_unity.png "Example image")
-
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=WHieBDCzoCw
 " target="_blank"><img src="http://img.youtube.com/vi/WHieBDCzoCw/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="560" height="315" border="10" /></a>
@@ -38,7 +34,7 @@ This simple system sends multiple chunks of byte arrays from processing to Unity
 
 
 # Basic Example (Processing)
-```javascript
+```java
 ScreenBroadcast sb;
 
 void setup() {
@@ -57,7 +53,7 @@ void draw() {
 ```
 
 # Basic Example (Unity)
-```javascript
+```csharp
 ScreenBroadcast sb;
 
 void setup() {
