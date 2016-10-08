@@ -11,6 +11,9 @@ alt="IMAGE ALT TEXT HERE" width="560" height="315" border="10" /></a>
 
 ## Get Started
 Download the files from the github repository:
+### Processing
+  - Add the file **ScreenBroadcast.pde** to your *sketch folder*
+  - Add the methods as showed on the example
 ### Unity
   - Add the file **ProcessingToTexture.cs** to your *Assets* folder. 
   - Create (or import) any  3D object, for example, a quad (GameObject > 3D Object > Quad)
@@ -18,21 +21,6 @@ Download the files from the github repository:
   - Set the **width** and **height** based on the width and height from processing skecth
   - If you want run interactions on the processing sketchs, enable Unity to run on background (File > Build Settings > Player Settings... > *check* Run On Bakground)
   
-
-
-## Data Transference
-This simple system sends multiple chunks of byte arrays from processing to Unity, using by default the localhost ip "127.0.0.1" at port "8051".
-
-
-
-# ScreenBroadcast Methods
-| Method       | return | Parameters        | Role  | 
-| ------------- |-------|---------------| -----|
-| BroadcastSplit | void |     | PImage | Broadcast Splitted data (split by 4) |
-| Broadcast     | void | PImage     |   Broadcast one package per time (deprecated) |
-| getImageBytes| byte[] | Pimage      |    $1 |
-
-
 # Basic Example (Processing)
 ```java
 ScreenBroadcast sb;
@@ -54,3 +42,14 @@ void draw() {
 
 # Basic Example (Unity)
 ![Unity example](https://github.com/lucascassiano/Processing-to-Unity/blob/master/example_unity.png "Image example")
+
+
+## Data Transference
+This simple system sends multiple chunks of byte arrays from processing to Unity, using by default the localhost ip "127.0.0.1" at port "8051".
+
+## ScreenBroadcast Methods
+| Method       | return | Parameters        | Role  | 
+| ------------- |-------|---------------| -----|
+| BroadcastSplit | void | PImage | Broadcast Splitted data (split by 4) |
+| Broadcast     | void | PImage  |   Broadcast one package per time (deprecated) |
+| getImageBytes| byte[] | Pimage  |    Return the bytes from the image encoded as JPG|
