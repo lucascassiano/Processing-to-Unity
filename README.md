@@ -18,22 +18,19 @@ Download the files from the github repository:
   - Set the **width** and **height** based on the width and height from processing skecth
   - If you want run interactions on the processing sketchs, enable Unity to run on background (File > Build Settings > Player Settings... > *check* Run On Bakground)
   
-### Processing
+
+
 ## Data Transference
 This simple system sends multiple chunks of byte arrays from processing to Unity, using by default the localhost ip "127.0.0.1" at port "8051".
 
 
 
-![img-title](top-image.png)
-
-
-
-# Tables
-| Tables        | Are           | Cool  |
-| ------------- |---------------| -----|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+# ScreenBroadcast Methods
+| Method       | return | Parameters        | Role  | 
+| ------------- |-------|---------------| -----|
+| BroadcastSplit | void |     | PImage | Broadcast Splitted data (split by 4) |
+| Broadcast     | void | PImage     |   Broadcast one package per time (deprecated) |
+| getImageBytes| byte[] | Pimage      |    $1 |
 
 
 # Basic Example (Processing)
