@@ -6,6 +6,9 @@ Render Processing Sketches Screens as an Unity Texture2D (compatible with Window
 " target="_blank"><img src="http://img.youtube.com/vi/WHieBDCzoCw/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="560" height="315" border="10" /></a>
 
+
+
+
 ## Get Started
 Download the files from the github repository:
 ### Unity
@@ -53,20 +56,4 @@ void draw() {
 ```
 
 # Basic Example (Unity)
-```csharp
-ScreenBroadcast sb;
-
-void setup() {
-  sb = new ScreenBroadcast();
-  size(800, 800);
-}
-
-void draw() {
-  //Draw things here!
-
-  sb.BroadcastSplit(get());
-  //Add some delay, change to higher values to have higher
-  delay(20);
-  //Anything bellow this line will be not send to Unity
-}
-```
+![Unity example](https://github.com/lucascassiano/Processing-to-Unity/blob/master/example_unity.png "Image example")
