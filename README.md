@@ -1,13 +1,6 @@
 # Processing to Unity
 Render Processing Sketches Screens as an Unity Texture2D (compatible with Windows, OSX and Linux)
 ![Preview](http://gifgif.io/DlS8yI.gif)
-## Example
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=WHieBDCzoCw
-" target="_blank"><img src="http://img.youtube.com/vi/WHieBDCzoCw/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="560" height="315" border="10" /></a>
-
-
-
 
 ## Get Started
 Download the files from the github repository:
@@ -53,3 +46,9 @@ This simple system sends multiple chunks of byte arrays from processing to Unity
 | BroadcastSplit | void | PImage | Broadcast Splitted data (split by 4) |
 | Broadcast     | void | PImage  |   Broadcast one package per time (deprecated) |
 | getImageBytes| byte[] | Pimage  |    Return the bytes from the image encoded as JPG|
+
+
+## Example
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=WHieBDCzoCw
+" target="_blank"><img src="http://img.youtube.com/vi/WHieBDCzoCw/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="560" height="315" border="10" /></a>
