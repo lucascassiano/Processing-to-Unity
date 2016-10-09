@@ -1,6 +1,6 @@
 # Processing to Unity
 Render Processing Sketches Screens as an Unity Texture2D (compatible with Windows, OSX and Linux)
-
+![Preview](http://gifgif.io/DlS8yI.gif)
 ## Example
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=WHieBDCzoCw
 " target="_blank"><img src="http://img.youtube.com/vi/WHieBDCzoCw/0.jpg" 
