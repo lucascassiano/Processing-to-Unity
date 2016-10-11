@@ -1,22 +1,17 @@
-/* ----------------
- ScreenBroadcast
- reference: https://forum.processing.org/two/discussion/17921/raspberry-pi-acting-as-a-syphon-server/p1
- version 1.0.3
- */
-
 /*--------------------------------------
  * ScreenBroadcast
- * version: 1.0.3
- * compatible with [unity] ProcessingToTexture v1.0
+ * version: 1.1
+ * compatible with [unity] ProcessingToTexture v1.1
  * Creation date: September 2016;
  * 
  * This code gets all the pixels from the screen, encodes the image to JPG and sends the byte array as 
- * multiples chunks of data on an UDP connection ( @ port 8051)
+ * multiples chunks of data on an UDP connection ( at port 8051)
  * Tutorial at:
  * https://github.com/lucascassiano/Processing-to-Unity
  * 
  * >Sends data at:
  * localhost : 8051
+ * reference: https://forum.processing.org/two/discussion/17921/raspberry-pi-acting-as-a-syphon-server/p1
  --------------------------------------*/
 
 import javax.imageio.*;
@@ -78,7 +73,7 @@ public class ScreenBroadcast {
     // Get the byte array, which we will send out via UDP!
     byte[] image_packet = baStream.toByteArray();
     println("Total: "+image_packet.length);
-    int n = 4;
+    int n = 8;
     int step = image_packet.length/n;
     println("STEP = " + step);
 
@@ -102,10 +97,10 @@ public class ScreenBroadcast {
     }
 
     //for the last packet
-    int leftBytes = image_packet.length-(3)*step;
+    int leftBytes = image_packet.length-(n-1)*step;
     byte[] packet = new byte[1 + leftBytes];
-    packet[0] = 3;
-    arrayCopy(image_packet, 3*step, packet, 1, packet.length-1);
+    packet[0] = (byte)(n-1);
+    arrayCopy(image_packet, (n-1)*step, packet, 1, packet.length-1);
     // Send JPEG data as a datagram
     println("Sending datagram "+(n-1)+" with " + packet.length + " bytes");
     try {

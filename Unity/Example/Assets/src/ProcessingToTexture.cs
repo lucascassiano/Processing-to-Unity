@@ -38,7 +38,7 @@ public class ProcessingToTexture : MonoBehaviour {
 	Texture2D texture;
 	private byte[] receivedBytesToTexture;
 
-	byte[] chunk0, chunk1, chunk2, chunk3;
+	byte[] chunk0, chunk1, chunk2, chunk3, chunk4, chunk5, chunk6, chunk7;
 
 	private int lastIndex = 0;
 
@@ -126,13 +126,35 @@ public class ProcessingToTexture : MonoBehaviour {
 					chunk2 = chunk;
 				}
 				else if(pkgIndex==3){
+					updateTexture = false;
 					chunk3 = chunk;
+				}
+				else if(pkgIndex==4){
+					updateTexture = false;
+					chunk4 = chunk;
+				}
+				else if(pkgIndex==5){
+					updateTexture = false;
+					chunk5 = chunk;
+				}
+				else if(pkgIndex==6){
+					updateTexture = false;
+					chunk6 = chunk;
+				}
+				else if(pkgIndex==7){
+					chunk7 = chunk;
 						
-					if(chunk0!=null && chunk1!=null && chunk2!=null){
+					if(chunk0!=null && chunk1!=null && chunk2!=null && chunk3!=null && chunk4!=null && chunk5!=null && chunk6!=null){
 						//Concat All
 						int skip = 0;
-						byte[] firstHalf  = Combine(chunk0, chunk1);
-						byte[] secondHalf = Combine(chunk2, chunk3);
+						byte[] firstPart  = Combine(chunk0, chunk1);
+						byte[] secondPart = Combine(chunk2, chunk3);
+						byte[] thirdPart = Combine(chunk4, chunk5);
+						byte[] fourthPart = Combine(chunk6, chunk7);
+
+						byte[] firstHalf = Combine(firstPart,secondPart);
+						byte[] secondHalf = Combine(thirdPart,fourthPart);
+
 						receivedBytesToTexture = Combine(firstHalf, secondHalf);
 
 						print("Update Texture received: " + receivedBytesToTexture.Length); 
